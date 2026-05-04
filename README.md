@@ -31,12 +31,11 @@ Permite cadastrar um orçamento com múltiplos itens e cálculo automático do t
 
 O projeto foi estruturado em **camadas**, separando responsabilidades:
 
-
-├── Api
-├── Bussines
-├── Domain
-├── Models
-└── PalindromeSolution.sln
+├── Api<br/>
+├── Bussines<br/>
+├── Domain<br/>
+├── Models<br/>
+└── PalindromeSolution.sln<br/>
 
 
 ### 📦 Api (Apresentação)
@@ -82,7 +81,7 @@ https://localhost:5254/swagger
 ```
 ## 🔍 Endpoint
 
-✔ Verificar Palíndromo
+### ✔ Verificar Palíndromo
 
 ```
 GET /api/palindrome/check?text={texto}
@@ -101,7 +100,7 @@ GET /api/palindrome/check?text={texto}
 }
 ```
 
-✔ Gerar sequência de Fibonacci
+### ✔ Gerar sequência de Fibonacci
 ```
 GET /api/fibonacci?count={numero}
 ```
@@ -117,7 +116,7 @@ GET /api/fibonacci?count={numero}
 }
 ```
 
-✔ Normalizar texto gritado
+### ✔ Normalizar texto gritado
 ```
 GET /api/textnormalizer/normalize?text={texto}
 ```
@@ -133,11 +132,11 @@ GET /api/textnormalizer/normalize?text={texto}
 }
 ```
 
-✔ Criar Orçamento
+### ✔ Criar Orçamento
 ```
 POST /api/orcamento
 ```
-📥 Exemplo:
+📥 Exemplo do JSON:
 ```
 {
   "clienteId": 10,
@@ -207,9 +206,9 @@ Orçamento
 - veiculoId obrigatório
 - Deve possuir pelo menos 1 item
 - Item:
-- - descrição obrigatória
-- - quantidade > 0
-- - valorUnitario > 0
+  - descrição obrigatória
+  - quantidade > 0
+  - valorUnitario > 0
 - Total calculado automaticamente
 
 ## 💡 Diferenciais
