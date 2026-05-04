@@ -5,42 +5,25 @@ API desenvolvida em .NET para:
 - ✔ Identificar se uma palavra ou frase é um **palíndromo**
 - ✔ Gerar os **N primeiros elementos da sequência de Fibonacci**
 - ✔ Normalizar textos “gritados”, reduzindo excesso de `!` e `?`
+- ✔ Cadastrar **orçamentos de oficina mecânica**
 
 Utilizando arquitetura em camadas baseada em boas práticas como Clean Architecture e princípios SOLID.
 
 ---
 
-## 📌 O que é um Palíndromo?
+## 📌 Funcionalidades
 
-Um palíndromo é uma palavra ou frase que pode ser lida da mesma forma de trás para frente.
+### 🔹 Palíndromo
+Verifica se um texto é igual ao seu inverso.
 
-**Exemplos:**
-- Arara
-- Ovo
-- Roma me tem amor
-- O lobo ama o bolo
+### 🔹 Fibonacci
+Gera uma sequência numérica baseada na soma dos dois valores anteriores.
 
----
+### 🔹 Normalização de Texto
+Remove excesso de pontuação de textos “gritados”.
 
-## 📌 O que é a sequência de Fibonacci?
-
-A sequência de Fibonacci é uma série numérica onde cada número é a soma dos dois anteriores.
-
-**Exemplos:**
-- X = 3 → 0, 1, 1
-- X = 5 → 0, 1, 1, 2, 3
-- X = 7 → 0, 1, 1, 2, 3, 5, 8
-
----
-
-## 📌 O que é normalização de texto gritado?
-
-É o processo de transformar um texto com excesso de pontuação em uma versão mais limpa e natural.
-
-**Exemplos:**
-- `Como é???????` → `Como é?`
-- `Não!!!!!!!!` → `Não!`
-- `O que???!!!!! Não acredito!!!` → `O que?! Não acredito!`
+### 🔹 Orçamento
+Permite cadastrar um orçamento com múltiplos itens e cálculo automático do total.
 
 ---
 
@@ -48,40 +31,47 @@ A sequência de Fibonacci é uma série numérica onde cada número é a soma do
 
 O projeto foi estruturado em **camadas**, separando responsabilidades:
 
-Api → Bussines → Domain
 
-### 📦 Api (Camada de Apresentação)
-Responsável por:
-- Expor endpoints HTTP
-- Receber requisições
-- Retornar respostas
+├── Api
+├── Bussines
+├── Domain
+├── Models
+└── PalindromeSolution.sln
 
-**Não contém regra de negócio**
 
----
-
-### 📦 Bussines (Camada de Aplicação)
-Responsável por:
-- Implementar a lógica de negócio
-- Definir interfaces (contratos)
-- Orquestrar o fluxo da aplicação
+### 📦 Api (Apresentação)
+- Exposição de endpoints HTTP
+- Validação de entrada
+- Retorno de respostas (JSON)
 
 ---
 
-### 📦 Domain (Camada de Domínio)
-Responsável por:
+### 📦 Bussines (Aplicação)
+- Regras de negócio
+- Serviços
+- Orquestração dos fluxos
+
+---
+
+### 📦 Domain (Domínio)
 - Regras puras
-- Lógica independente de framework
-- Normalização de texto (remoção de acentos, espaços, etc)
+- Lógicas independentes de framework
 
 ---
 
-## 🚀 Como executar o projeto
+### 📦 Models (Contratos)
+- DTOs de entrada e saída
+- Compartilhado entre Api e Bussines
+- Evita acoplamento entre camadas
+
+---
+
+## 🚀 Como executar
 
 ### Pré-requisitos
 - .NET 10+
 
-### Rodar a aplicação
+### Rodar aplicação
 
 ```bash
 dotnet run --project Api
@@ -143,6 +133,54 @@ GET /api/textnormalizer/normalize?text={texto}
 }
 ```
 
+✔ Criar Orçamento
+```
+POST /api/orcamento
+```
+📥 Exemplo:
+```
+{
+  "clienteId": 10,
+  "veiculoId": 25,
+  "itens": [
+    {
+      "descricao": "Troca de óleo",
+      "quantidade": 1,
+      "valorUnitario": 120.00
+    },
+    {
+      "descricao": "Filtro de óleo",
+      "quantidade": 1,
+      "valorUnitario": 45.00
+    }
+  ]
+}
+```
+📤 Resposta:
+```
+{
+  "clienteId": 10,
+  "veiculoId": 25,
+  "status": "Aberto",
+  "valorTotal": 165.00,
+  "dataCriacao": "2026-05-04T12:00:00",
+  "itens": [
+    {
+      "descricao": "Troca de óleo",
+      "quantidade": 1,
+      "valorUnitario": 120.00,
+      "valorTotal": 120.00
+    },
+    {
+      "descricao": "Filtro de óleo",
+      "quantidade": 1,
+      "valorUnitario": 45.00,
+      "valorTotal": 45.00
+    }
+  ]
+}
+```
+
 ## 🧠 Regras aplicadas
 
 Palíndromo:
@@ -163,6 +201,22 @@ Texto gritado:
 - Reduz sequências repetidas de ! para apenas !
 - Quando houver ? e ! juntos, normaliza para ?!
 - Mantém o restante do texto original
+
+Orçamento
+- clienteId obrigatório
+- veiculoId obrigatório
+- Deve possuir pelo menos 1 item
+- Item:
+- - descrição obrigatória
+- - quantidade > 0
+- - valorUnitario > 0
+- Total calculado automaticamente
+
+## 💡 Diferenciais
+- Arquitetura em camadas (baixo acoplamento)
+- Separação de responsabilidades
+- Código testável e escalável
+- Uso de DTOs compartilhados (Models)
 
 ## 🛠️ Tecnologias utilizadas
 - .NET 10

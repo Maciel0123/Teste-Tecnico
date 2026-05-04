@@ -92,7 +92,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Domain": "1.0.0"
+          "Domain": "1.0.0",
+          "Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Bussines.dll": {}
@@ -109,6 +110,16 @@
         },
         "runtime": {
           "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
         }
       }
     }
@@ -222,12 +233,18 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "Bussines >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.2",
+      "Models >= 1.0.0",
       "Swashbuckle.AspNetCore.Swagger >= 10.1.7",
       "Swashbuckle.AspNetCore.SwaggerGen >= 10.1.7",
       "Swashbuckle.AspNetCore.SwaggerUI >= 10.1.7"
@@ -267,6 +284,9 @@
           "projectReferences": {
             "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Bussines\\Bussines.csproj": {
               "projectPath": "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Bussines\\Bussines.csproj"
+            },
+            "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Models\\Models.csproj"
             }
           }
         }

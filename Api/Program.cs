@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IPalindromeService, PalindromeService>();
 builder.Services.AddScoped<IFibonacciService, FibonacciService>();
 builder.Services.AddScoped<ITextNormalizerService, TextNormalizerService>();
+builder.Services.AddScoped<IOrcamentoService, OrcamentoService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

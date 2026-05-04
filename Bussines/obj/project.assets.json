@@ -11,6 +11,16 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
       }
     }
   },
@@ -19,11 +29,17 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Domain >= 1.0.0"
+      "Domain >= 1.0.0",
+      "Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -60,6 +76,9 @@
           "projectReferences": {
             "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Henrique\\Desktop\\Teste-Tecnico\\Models\\Models.csproj"
             }
           }
         }
