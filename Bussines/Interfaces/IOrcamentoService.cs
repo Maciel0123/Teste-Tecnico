@@ -1,4 +1,4 @@
-using Models;
+using Models.DTOs;
 
 namespace Bussines.Interfaces;
 
