@@ -1,9 +1,10 @@
-# 🧪 Palindrome & Fibonacci API (.NET)
+# 🧪 Teste Técnico
 
 API desenvolvida em .NET para:
 
 - ✔ Identificar se uma palavra ou frase é um **palíndromo**
 - ✔ Gerar os **N primeiros elementos da sequência de Fibonacci**
+- ✔ Normalizar textos “gritados”, reduzindo excesso de `!` e `?`
 
 Utilizando arquitetura em camadas baseada em boas práticas como Clean Architecture e princípios SOLID.
 
@@ -32,12 +33,22 @@ A sequência de Fibonacci é uma série numérica onde cada número é a soma do
 
 ---
 
+## 📌 O que é normalização de texto gritado?
+
+É o processo de transformar um texto com excesso de pontuação em uma versão mais limpa e natural.
+
+**Exemplos:**
+- `Como é???????` → `Como é?`
+- `Não!!!!!!!!` → `Não!`
+- `O que???!!!!! Não acredito!!!` → `O que?! Não acredito!`
+
+---
+
 ## 🏗️ Arquitetura do Projeto
 
 O projeto foi estruturado em **camadas**, separando responsabilidades:
 
 Api → Bussines → Domain
-
 
 ### 📦 Api (Camada de Apresentação)
 Responsável por:
@@ -68,7 +79,7 @@ Responsável por:
 ## 🚀 Como executar o projeto
 
 ### Pré-requisitos
-- .NET 8+
+- .NET 10+
 
 ### Rodar a aplicação
 
@@ -77,7 +88,7 @@ dotnet run --project Api
 ```
 A API estará disponível em:
 ```
-https://localhost:xxxx/swagger
+https://localhost:5254/swagger
 ```
 ## 🔍 Endpoint
 
@@ -101,8 +112,9 @@ GET /api/palindrome/check?text={texto}
 ```
 
 ✔ Gerar sequência de Fibonacci
+```
 GET /api/fibonacci?count={numero}
-
+```
 📥 Exemplo:
 ```
 /api/fibonacci?count=7
@@ -114,6 +126,23 @@ GET /api/fibonacci?count={numero}
   "sequence": [0, 1, 1, 2, 3, 5, 8]
 }
 ```
+
+✔ Normalizar texto gritado
+```
+GET /api/textnormalizer/normalize?text={texto}
+```
+📥 Exemplo:
+```
+/api/textnormalizer/normalize?text=O que???!!!!! Não acredito!!!
+```
+📤 Resposta:
+```
+{
+  "input": "O que???!!!!! Não acredito!!!",
+  "normalized": "O que?! Não acredito!"
+}
+```
+
 ## 🧠 Regras aplicadas
 
 Palíndromo:
@@ -128,8 +157,15 @@ Fibonacci:
 - Geração iterativa (melhor performance)
 - Complexidade O(n)
 - Não utiliza recursão
+
+Texto gritado:
+- Reduz sequências repetidas de ? para apenas ?
+- Reduz sequências repetidas de ! para apenas !
+- Quando houver ? e ! juntos, normaliza para ?!
+- Mantém o restante do texto original
+
 ## 🛠️ Tecnologias utilizadas
-- .NET 8
+- .NET 10
 - ASP.NET Core Web API
 - C#
 - Swagger (OpenAPI)
