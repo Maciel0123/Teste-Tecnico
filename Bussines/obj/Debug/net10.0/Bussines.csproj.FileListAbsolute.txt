@@ -1,0 +1,15 @@
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\bin\Debug\net10.0\Bussines.deps.json
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\bin\Debug\net10.0\Bussines.dll
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\bin\Debug\net10.0\Bussines.pdb
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\bin\Debug\net10.0\Domain.dll
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\bin\Debug\net10.0\Domain.pdb
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.csproj.AssemblyReference.cache
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.AssemblyInfoInputs.cache
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.AssemblyInfo.cs
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.csproj.CoreCompileInputs.cache
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.csproj.Up2Date
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.dll
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\refint\Bussines.dll
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.pdb
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\ref\Bussines.dll
