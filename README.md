@@ -1,6 +1,11 @@
-# 🧪 Palindrome API (.NET)
+# 🧪 Palindrome & Fibonacci API (.NET)
 
-API desenvolvida em .NET para identificar se uma palavra ou frase é um **palíndromo**, utilizando uma arquitetura em camadas baseada em boas práticas como Clean Architecture e princípios SOLID.
+API desenvolvida em .NET para:
+
+- ✔ Identificar se uma palavra ou frase é um **palíndromo**
+- ✔ Gerar os **N primeiros elementos da sequência de Fibonacci**
+
+Utilizando arquitetura em camadas baseada em boas práticas como Clean Architecture e princípios SOLID.
 
 ---
 
@@ -16,12 +21,23 @@ Um palíndromo é uma palavra ou frase que pode ser lida da mesma forma de trás
 
 ---
 
+## 📌 O que é a sequência de Fibonacci?
+
+A sequência de Fibonacci é uma série numérica onde cada número é a soma dos dois anteriores.
+
+**Exemplos:**
+- X = 3 → 0, 1, 1
+- X = 5 → 0, 1, 1, 2, 3
+- X = 7 → 0, 1, 1, 2, 3, 5, 8
+
+---
+
 ## 🏗️ Arquitetura do Projeto
 
 O projeto foi estruturado em **camadas**, separando responsabilidades:
 
-
 Api → Bussines → Domain
+
 
 ### 📦 Api (Camada de Apresentação)
 Responsável por:
@@ -83,15 +99,35 @@ GET /api/palindrome/check?text={texto}
   "isPalindrome": true
 }
 ```
+
+✔ Gerar sequência de Fibonacci
+GET /api/fibonacci?count={numero}
+
+📥 Exemplo:
+```
+/api/fibonacci?count=7
+```
+📤 Resposta:
+```
+{
+  "count": 7,
+  "sequence": [0, 1, 1, 2, 3, 5, 8]
+}
+```
 ## 🧠 Regras aplicadas
 
-A validação considera:
+Palíndromo:
 
 - Ignora maiúsculas e minúsculas
 - Remove acentos
 - Ignora espaços
 - Considera apenas letras e números
 - Não utiliza métodos prontos como Reverse()
+
+Fibonacci:
+- Geração iterativa (melhor performance)
+- Complexidade O(n)
+- Não utiliza recursão
 ## 🛠️ Tecnologias utilizadas
 - .NET 8
 - ASP.NET Core Web API

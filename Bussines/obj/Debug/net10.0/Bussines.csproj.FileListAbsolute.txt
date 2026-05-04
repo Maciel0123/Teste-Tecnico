@@ -13,3 +13,4 @@ C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.dll
 C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\refint\Bussines.dll
 C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.pdb
 C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\ref\Bussines.dll
+C:\Users\Henrique\Desktop\Teste-Tecnico\Bussines\obj\Debug\net10.0\Bussines.sourcelink.json
